@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<style>
+img.a
+{
+width:140px;
+height:70px;
+}
+
+.b{
+  position: absolute;
+  top: 80px;
+  right: 16px;
+  font-size: 35px;
+  color:darkviolet;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding:0;
+  background-color: black;
+  opacity:0.6;
+}
+
+.d{
+  float: left;
+  background-color: black;
+}
+
+li
+{
+float: left;
+left:100px;
+}
+
+li a {
+  display: block;
+  color: lightgray;
+  text-align: center;
+  padding:5px 341px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: gray;
+}
+
+
+
+td{
+padding:1px 80px;
+position:center;
+}
+.la{
+        background-color:lightgray;
+        color:black;
+        padding: 3px 20px;
+
+</style>
+</head>
+<body>
+<b><h2><center>HOME PAGE:</center></h2></b>
+<br>
+<a href="https://www.iiit.ac.in/"><img class="a" src="https://www.iiit.ac.in/img/iiit-new.png"></a>
+<a class="b" href="https://serc.iiit.ac.in/rdip"><b>RDIP</b></a>
+<ul>
+<div class="d">
+  <li><a class="active" href="homepage.html"><h3>Home</h3></a></li>
+  <li><a href="registration.html"><h3>Registration Form</h3></a></li>
+</ul></div>
+<br>
+<br>
+<form action="details.html">
+<table >
+<tr><td><h3><center>FirstName:<center></h3></td><td><center><input type="text"  id="fname" required/><center></td></tr>
+<tr><td><h3><center>Email:<center></h3></td><td><center><input type="text" name="email" id="email" required/><center></td></tr>
+<tr><td><h3><center>Phone No:<center></h3></td><td><center><input type="text" name="phoneno" id="pno" required/><center></td></tr>
+<tr><td><h3><center>Gender:<center></h3></td><td><center><input type="radio" name="gender"><b>Male</b><input type="radio" name="gender"><b>Female</b><input type="radio" name="gender"><b>Others</b><center></td></tr>
+<tr><td><h3><center>Reason for RDIP:<center></h3></td><td><center><input type="checkbox" name="html"><label><b>HTML</b></label><input type="checkbox" name="css"><label><b>CSS</b></label><input type="checkbox" name="javascript"><label><b>JAVASCRIPT</b></label><center></td></tr>
+<tr><td><h3><center>College:<center></h3></td><td><center><input type="text" name="college" id="college" required/><center></td></tr>
+<tr><td><center><input type="checkbox" name="declaration"></center></td><td><b><center>I declare above details given by me are true</b><center></td></tr>
+<tr><td><center><input type="submit" value="submit" onclick="details.html"></center></td><td><center><input type="reset" value="Reset"/></center></td></tr>
+
+</table>
+</form>
+</body>
+</html>
