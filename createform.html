@@ -1,7 +1,7 @@
 <html>
 
 <body>
-<form>
+<form name="myForm">
 
 <table cellpadding="2" width="20%" bgcolor="99FFFF" align="center"
 cellspacing="2">
@@ -14,19 +14,18 @@ cellspacing="2">
 
 <tr>
 <td>Name</td>
-<td><input type=text name=textnames id="textname" size="30"></td>
+<td><input type=text name=textnames id="textname" size="30" required></td>
 </tr>
 
 
 <tr>
 <td>Postal Address</td>
-<td><input type="text" name="paddress" id="paddress" size="30"></td>
+<td><input type="text" name="paddress" id="paddress" size="30" required></td>
 </tr>
 
 <tr>
 <td>Personal Address</td>
-<td><input type="text" name="personaladdress"
-id="personaladdress" size="30"></td>
+<td><input type="text" name="personaladdress" id="personaladdress" size="30" required></td>
 </tr>
 
 <tr>
@@ -37,7 +36,7 @@ id="personaladdress" size="30"></td>
 
 <tr>
 <td>City</td>
-<td><select name="City">
+<td><select name="City" required>
 <option value="-1" selected>select..</option>
 <option value="New Delhi">NEW DELHI</option>
 <option value="Mumbai">MUMBAI</option>
@@ -48,7 +47,7 @@ id="personaladdress" size="30"></td>
 
 <tr>
 <td>Course</td>
-<td><select name="Course">
+<td><select name="Course" required>
 <option value="-1" selected>select..</option>
 <option value="B.Tech">B.TECH</option>
 <option value="MCA">MCA</option>
@@ -59,7 +58,7 @@ id="personaladdress" size="30"></td>
 
 <tr>
 <td>District</td>
-<td><select name="District">
+<td><select name="District" required>
 <option value="-1" selected>select..</option>
 <option value="Nalanda">NALANDA</option>
 <option value="UP">UP</option>
@@ -70,28 +69,26 @@ id="personaladdress" size="30"></td>
 </tr>
 
 <tr>
-<td>State</td>
-<td><select Name="State">
-<option value="-1" selected>select..</option>
-<option value="New Delhi">NEW DELHI</option>
-<option value="Mumbai">MUMBAI</option>
-<option value="Goa">GOA</option>
-<option value="Bihar">BIHAR</option>
-</select></td>
+<td>SubjectInterests:</td>
+<td><input class="messageCheckbox" type="checkbox" name="c" onclick="myFunction()" id="coa" value="COA" size="30" >COA
+<input class="messageCheckbox" type="checkbox" name="c" onclick="myFunction()" id="dmt" value="DMT" size="30" >DMT
+<input class="messageCheckbox" type="checkbox" name="c" onclick="myFunction()" id="dms" value="DMS" size="30" >DMS
+<input class="messageCheckbox" type="checkbox" name="c" onclick="myFunction()" id="pns" value="PNS" size="30" >PNS</td>
+</td>
 </tr>
 <tr>
 <td>PinCode</td>
-<td><input type="text" name="pincode" id="pincode" size="30"></td>
+<td><input type="text" name="pincode" id="pincode" size="30" required></td>
 
 </tr>
 <tr>
 <td>EmailId</td>
-<td><input type="text" name="emailid" id="emailid" size="30"></td>
+<td><input type="text" name="emailid" id="emailid" size="30" required></td>
 </tr>
 
 <tr>
 <td>DOB</td>
-<td><input type="text" name="dob" id="dob" size="30"></td>
+<td><input type="text" name="dob" id="dob" size="30" required></td>
 </tr>
 
 <tr>
@@ -100,9 +97,29 @@ id="personaladdress" size="30"></td>
 </tr>
 <tr>
 <td><input type="reset"></td>
-<td colspan="2"><input type="submit" value="Submit Form" /></td>
+<td colspan="2"><input type="submit" id="Button" value="Submit Form" onclick="myFunc()"/></td>
 </tr>
 </table>
 </form>
+<p id="demo"></p>
+<script>
+function myFunc()
+{
+
+var x=document.getElementById("mobileno").value;
+if(isNaN(x)||x<6000000000||x>9999999999)
+{
+alert("enter valid mobile number");
+}
+var che;
+che=document.forms["myForm"]["c"];
+if(che[0].checked==false&&che[1].checked==false&&che[2].checked==false&&che[3].checked==false)
+{
+alert("select atleast one in SubjectInterests");
+}
+document.write(x+"<br>");
+}
+
+</script>
 </body>
 </html>

@@ -1,0 +1,42 @@
+<html>
+<head>
+<script type="text/javascript">
+function validateInput() {
+var ins=document.getElementsByTagName("input");
+var txs=document.getElementsByTagName("textarea");
+pass = true;
+passICount=0;
+passTCount=0;
+
+for (var i=0; i<ins.length;i++) {
+if (ins.value =="") {
+pass = false;
+passICount++;
+}
+}
+for (var i=0; i<txs.length;i++) {
+if (txs.value =="") {
+pass = false;
+passTCount++;
+
+}
+}
+
+document.getElementById("myButton").disabled=!pass?true:false;
+document.getElementById("myButton").value=!pass?(passICount+passTCount) + " questions remains":"Go to next questions";
+}
+</script>
+
+</head>
+<body onload="validateInput()" onmousedown="validateInput()" onkeyup="validateInput()">
+<form onsubmit="">
+<input name="myInput" type="text" size="20" /><br />
+<input name="myInput" type="text" size="20" /><br />
+<input name="myInput" type="text" size="20" /><br />
+<input name="myInput" type="textarea" size="20" /><br />
+
+<br />
+<input type="button" id="myButton" onclick="getElements()" value="How many input elements?" />
+</form>
+</body>
+</html>
