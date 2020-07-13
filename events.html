@@ -1,0 +1,50 @@
+<html>
+<body onload="myonload()">
+<button onclick="myonclick(this)">SHOW TIME ON CLICK</button>
+<h1 id="demo"></h1>
+<input type="text" onchange="uppercase()" id="upper">
+<h2 onmouseover="mouseover(this)" onmouseout="mouseout(this)">TOUCH ME</h2>
+<img src="reverse.jpg" onmousedown="mousedown()" onmouseup="mouseup()" id="image" width="200" height="200">
+<script>
+function myonload()
+{ 
+var some;
+if(navigator.cookieEnabled==true)
+{
+	some="cookies enabled";
+}
+else
+{
+	some="cookies disabled";
+}
+document.getElementById("demo").innerHTML=some;
+}
+function myonclick(ap)
+{
+	ap.innerHTML=Date();
+}
+function uppercase()
+{
+	x=document.getElementById("upper");
+	x.value=x.value.toUpperCase()
+}
+function mouseover(ob)
+{
+	ob.innerHTML="MOUSEOVER";
+}
+function mouseout(cb)
+{
+	cb.innerHTML="MOUSEOUT";
+}
+function mousedown()
+{
+	document.getElementById("image").src="standard.jpg";
+
+}
+function mouseup()
+{
+		document.getElementById("image").src="reverse.jpg";
+}
+</script>
+</body>
+</html>

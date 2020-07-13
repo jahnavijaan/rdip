@@ -1,0 +1,89 @@
+<html>
+<body>
+<input type="text" id="demo" >
+<button onclick="ifelse()">ifelse</button>
+<button onclick="switcch()">switch</button><br><br>
+<button onclick="fibo()">Fibonocci</button>
+<p id="out"></p>
+
+<script>
+function ifelse()
+{
+var x=document.getElementById("demo").value;
+try{
+if(x>10&&x<100)
+	{
+	document.getElementById("out").innerHTML=x+" is b/w 10 and 100";
+	}
+else if(x<=10||x>=100)
+	{
+	document.getElementById("out").innerHTML=x+" is not b/w 10 and 100";
+	}
+else { throw "is not a number";}
+}
+catch(e)
+{
+document.getElementById("out").innerHTML="Input " +e;
+}
+finally
+{
+document.getElementById("demo").value=" ";
+}
+}
+function switcch()
+{
+var x=document.getElementById("demo").value;
+var text=" ";
+if(x>10&&x<100)
+	{
+	text="1";
+	}
+else
+	{
+	text="0";
+	}
+switch (text) {
+  case "1":
+    	document.getElementById("out").innerHTML=x+" is b/w 10 and 100";
+    break;
+  case "0":
+    	document.getElementById("out").innerHTML=x+" is not b/w 10 and 100";
+    break;
+  }
+}
+function fibo()
+{
+var x=document.getElementById("demo").value;
+var t1=0,t2=1,nt=0;
+
+for(i=1;i<=x;i++)
+{
+ console.log(t1+" ");
+nt = t1 + t2;
+        t1 = t2;
+        t2 = nt;
+
+}
+}
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
